@@ -35,9 +35,10 @@
             return xmlhttp; 
         }
 
-        function ajaxGet(view,handlers){
+        function ajaxGet(view,handlers,cache = true){
+            let id = cache ? '?id='+Date.now() : '';
             ajax = newAjax();
-            ajax.open("GET", './view/'+view+'.html', true);
+            ajax.open("GET", './view/'+view+'.html'+id, true);
             ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             ajax.send();
             ajax.onreadystatechange = ()=>{   
@@ -68,7 +69,6 @@
 
             if(check){check.remove()}
         }
-
 
     //--------------------------------------------------------
     // Tools
@@ -125,8 +125,8 @@
         	}
 
         	if(error == 0){
-        		//form.submit();
-
+                console.log(form.id);
+        		document.forms[form.id].submit();
         		alert('Message Sent, Thank You','success',false);
         	}else{
         		alert('Incomplete Form','warning',false);
@@ -157,7 +157,18 @@
         }
 
         function handlersPortfolio(){
-        	createOrder();
+        	let skBar = ajaxD.querySelectorAll('.loader-inner');
+
+            for(let i = 0; i < skBar.length; i++){
+                skBar[i].style.cssText = "--wdt:"+skBar[i].getAttribute('data-progress');
+                skBar[i].firstElementChild.innerText = skBar[i].getAttribute('data-progress');
+            }
+
+            createOrder();
+
+            $(".reveal").click(()=>{
+                event.preventDefault();
+            });
         }
 
         function createOrder(){
@@ -189,7 +200,31 @@
 			}
 		}
 
-	
+	//--------------------------------------------------------
+    // About Me
+    //--------------------------------------------------------
+        
+        function hrefAbout(){
+            loading();
+
+            try{
+                handlerCleaner(toAbout,ajaxD);
+            }catch(e){
+                noCanDo(e);
+                console.log(e);
+            }
+
+            function toAbout(){
+                ajaxGet('about',handlerAbout);
+            }
+        }
+
+        function handlerAbout(){
+            $('.playground .toContact').click((e)=>{
+                hrefContact();
+            });
+        }
+
 	//--------------------------------------------------------
     // Contact Me
     //--------------------------------------------------------
@@ -220,8 +255,9 @@
 	            });
 	        }
 
-	        $('#submit').click((e)=>{
-	        	formCheck(e.currentTarget.form);
+	        $('#contactme').on('submit',(e)=>{
+                e.preventDefault()
+	        	formCheck(e.currentTarget);
 	        });
         }
 
@@ -235,7 +271,7 @@
 	    // First Page
 	    //--------------------------------------------------------
 
-	    	//hrefPortfolio();
+	    	hrefPortfolio();
 
 		//--------------------------------------------------------
 	    // href 
@@ -245,8 +281,12 @@
 	    		hrefPortfolio()
 	    	});
 
-	    	$('.toContact').click(()=>{
-	    		hrefContact()
-	    	});
+            $('.toAbout').click(()=>{
+                hrefAbout()
+            });
+
+            $('.toContact').click(()=>{
+                hrefContact()
+            });
 	});
 		
