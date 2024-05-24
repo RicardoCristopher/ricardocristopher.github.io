@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!-- Meta SEO -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
+        <meta name="description" content="Hi there, my name is Ricardo Cristopher, I am a fullstack web developer, that loves to create art in the Front End, useful algorithms in Back End, and robust Databases.">
+        <meta name="keywords" content="portfolio, curriculum vitae, curriculum, vitae, fullstack, web, developer">
         <meta name="author" content="Ricardo Aaron Cristopher">
         <title>Ricardo's</title>
+
+        <!-- Preloads -->
+        <link rel="preload" fetchpriority="high" as="font" href="./plugins/fontawesome-free/webfonts/fa-brands-400.woff2" type="font/woff2" crossorigin>
+        <link rel="preload" fetchpriority="high" as="font" href="./plugins/fontawesome-free/webfonts/fa-solid-900.woff2" type="font/woff2" crossorigin>
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/brand-ant.png"   type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/brand-facs.png"  type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/brand-learn.png" type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/brand-snv.png"   type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/pc9.png"         type="image/png">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/i-land.jpg"      type="image/jpg">
+        <link rel="preload" fetchpriority="high" as="image" href="./src/img/i-port.jpg"      type="image/jpg">
+
+        <!-- Styles -->
         <link rel="icon" type="image/png" href="./src/img/letter-r.png">
-        <link rel="stylesheet" type="text/css" href="./plugins/fontawesome-free/css/all.css">
-        <link rel="stylesheet" type="text/css" href="plugins/toastmessage/jquery.toastmessage-min.css">
-        <link rel="stylesheet" type="text/css" href="./src/css/main.css">
-        <link rel="stylesheet" type="text/css" href="./src/css/custom.css">
+        <link rel="stylesheet" type="text/css" href="./src/css/style.css">
     </head>
 
     <body class="body">
         <aside class="aside flex-col-center-center">
             <nav class="nav">
                 <section class="navBrand">
-                    <div class="grid-section-wrapper flex-row-center-center brand-wrapper">
-                        <img class="w-25 toPortfolio" src="./src/img/letter-r.png" alt="Ricardo's Brand" title="Ricardo's"><h3>icardo's</h3>
-                    </div>
+                    <figure class="grid-section-wrapper flex-row-center-center brand-wrapper">
+                        <img class="w-25 toPortfolio href" src="./src/img/letter-r.png" alt="Ricardo's Brand" title="Ricardo's">  
+                    </figure>
 
-                    <hr class="h-divider d-block w-100">                  
+                    <hr class="h-divider d-block w-100">
                 </section>
 
                 <section class="navHref">
@@ -32,7 +44,7 @@
                                 Portfolio
                             </li>
 
-                            <li class="href">
+                            <li class="href toAbout">
                                 About Me
                             </li>
 
@@ -44,12 +56,12 @@
                         <div class="flex-col-center-center social-icons w-100">
                             <hr class="h-divider my-3">
 
-                            <div class="d-flex justify-content-around align-items-center w-100">
-                                <a href="https://www.linkedin.com/in/ricardocristopher/" target="_blank">
+                            <div class="d-flex justify-content-around align-items-center w-50">
+                                <a href="https://www.linkedin.com/in/ricardocristopher/" target="_blank" title="Go to my LinkedIn">
                                     <i class="fab fa-linkedin imgHover"></i>
                                 </a>
 
-                                <a href="https://github.com/RicardoCristopher" target="_blank">
+                                <a href="https://github.com/RicardoCristopher" target="_blank" title="Go to my GitHub">
                                     <i class="fab fa-github imgHover"></i>
                                 </a>
                             </div>
@@ -77,7 +89,7 @@
                             </li>
 
                             <li title="About Me">
-                               <i class="fas fa-user imgHover"></i>
+                               <i class="fas fa-user imgHover href toAbout"></i>
                             </li>
                         </ul> 
                     </div>            
@@ -87,82 +99,14 @@
 
         <main class="main">
             <section id="mainer" class="mainer flex-col-center-center">
-
-
-                <!--div id="about" class="fadeIn">
-                    <div class="h-100">
-                        
-                    </div>
-
-                    <div class="info-bar flex-col-center-center">
-                        <div class="btn-group justify-content-evenly align-items-center w-50">
-                            <i class="fas fa-grin-wink"></i>
-                        </div>
-
-                        <p>
-                            Hi There, my name is Ricardo Cristopher, I have 2 years of experience in web development as a fullstack developer, that love to create art in the Front End, Logical Tools in Back End, and a solid and robust Databases.
-                        </p>
-                    </div>
-
-                    <div class="info-bar flex-col-center-center">
-                        <div class="btn-group justify-content-evenly align-items-center w-50">
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-php  "></i>
-                            <i class="fas fa-database"></i>
-                        </div>
-
-                        <p>
-                            I have been actively using JavaScript, JQuery, HTML5, CSS, PHP7, MySQL and PostgreSQL. I design and create my own databases, and I give priority to the user experience.
-                        </p>
-                    </div>
-
-                    <div class="info-bar flex-col-center-center">
-                        <div class="btn-group justify-content-evenly align-items-center w-50">
-                            <i class="fab fa-wordpress"></i>
-                        </div>
-
-                        <p>
-                            I have also been in charge of creating and managing projects built in Wordpress, as well as speed and response optimization.
-                        </p>
-                    </div>
-
-                    <div class="info-bar flex-col-center-center">
-                        <h4>
-                            Stay tunned for more 
-                        </h4>
-
-                        <div class="btn-group justify-content-evenly align-items-center w-50">
-                            <i class="fab fa-linkedin imgHover" title="My LinkedIn"></i>
-                            <i class="fab fa-github   imgHover" title="My GitHub"></i>
-                            <i class="fas fa-envelope imgHover" title="DM me"></i>
-                        </div>
-                    </div>
-                </div-->
-
-                <div class="parallax">
-                    <div class="parallax__group">
-                        <div class="parallax__layer parallax__layer--back">
-                            Back Layer 1
-                        </div>
-
-                        <div class="parallax__layer parallax__layer--base">
-                            Front Layer 1
-                        </div>
-                    </div>
-
-                    <div class="parallax__group">
-                        <div class="parallax__layer parallax__layer--back">
-                            Back Layer 2
-                        </div>
-
-                        <div class="parallax__layer parallax__layer--base">
-                            Front Layer 2
-                        </div>
+                <div id="loader-wrapper">
+                    <div class="circle-border">
+                        <div class="circle-core"></div>
                     </div>
                 </div>
             </section> 
             
-            <section role="footer" class="foot flex-row-center-center">
+            <section class="foot flex-row-center-center">
                 <div class="grid-section-wrapper flex-col-center-center w-100">
                     Powered by Antwoord Creative Lab
                 </div>
@@ -170,7 +114,7 @@
         </main>
 
         <script type="text/javascript" src="./plugins/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="plugins/toastmessage/jquery.toastmessage-min.js"></script>
-        <script src="./src/js/main.js"></script>
+        <script type="text/javascript" src="./plugins/toastmessage/jquery.toastmessage-min.js"></script>
+        <script src="./src/js/main.min.js"></script>
     </body>
 </html>
