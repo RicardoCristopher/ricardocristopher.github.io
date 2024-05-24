@@ -1,0 +1,6 @@
+*.htaccess
+*.temp
+*.log
+*.lock
+*.map
+**/backup
