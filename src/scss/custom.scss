@@ -668,6 +668,7 @@
 
             .playground .title{
                 color: #0009;
+                text-align: center;
             }
 
             .playground .title.maintitle{
@@ -743,7 +744,7 @@
                 }
 
                 .playground-content{
-                    font-size: calc(1rem + .5vw);
+                    font-size: 4vmin;
                 }
             }
                         
