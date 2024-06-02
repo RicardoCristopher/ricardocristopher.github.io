@@ -480,11 +480,8 @@
 
             #portfolio .grid-section-wrapper:not(.skill-bar){
                 background-color: #fff;
-                *background-color: #0005;
                 box-shadow: 0px 0px 20px 3px #0004;
                 overflow: hidden;
-
-                *transition: box-shadow .3s;
             }
 
             #portfolio .grid-section-wrapper figure{
@@ -700,6 +697,7 @@
                 transform: translateZ(-3px) scale(5);
                 z-index: 0;
                 box-shadow: inset 0px 0px 25px 32px var(--light);
+                opacity: .5;
             }
 
             .playground-front {
@@ -727,7 +725,7 @@
             @media (orientation: landscape){
 
                 .playground-back{
-                    background-image: url("../img/i-land.jpg");
+                    background-image: url("../img/i-land.webp");
                     background-size: cover;
                 }
 
@@ -739,7 +737,7 @@
             @media (orientation: portrait) or (max-width: 680px){
 
                 .playground-back{
-                    background-image: url("../img/i-port.jpg");
+                    background-image: url("../img/i-port.webp");
                     background-size: cover;
                 }
 
