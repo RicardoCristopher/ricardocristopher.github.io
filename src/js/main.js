@@ -125,7 +125,6 @@
         	}
 
         	if(error == 0){
-                console.log(form.id);
         		document.forms[form.id].submit();
         		alert('Message Sent, Thank You','success',false);
         	}else{
